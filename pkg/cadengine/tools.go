@@ -3,6 +3,7 @@ package cadengine
 import (
 	"context"
 	"fmt"
+	"log"
 
 	"github.com/mark3labs/mcp-go/mcp"
 	"github.com/mark3labs/mcp-go/server"
@@ -10,6 +11,7 @@ import (
 
 // RegisterTools registers all CAD tools with the MCP server
 func RegisterTools(s *server.MCPServer, manager *CadManager) {
+	log.Println("Registering CAD tools...")
 	// Tool 1: new_project
 	s.AddTool(
 		mcp.NewTool("new_project",
@@ -141,6 +143,8 @@ func RegisterTools(s *server.MCPServer, manager *CadManager) {
 		),
 		saveFileHandler(manager),
 	)
+
+	log.Println("All 7 CAD tools registered successfully")
 }
 
 // Handler implementations
