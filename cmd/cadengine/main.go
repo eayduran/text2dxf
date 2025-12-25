@@ -4,7 +4,7 @@ import (
 	"log"
 
 	"github.com/mark3labs/mcp-go/server"
-	"github.com/yourusername/cadengine/pkg/cadengine"
+	"github.com/eayduran/text2dxf/pkg/cadengine"
 )
 
 func main() {

@@ -1,4 +1,4 @@
-module github.com/yourusername/cadengine
+module github.com/eayduran/text2dxf
 
 go 1.23.0
 
