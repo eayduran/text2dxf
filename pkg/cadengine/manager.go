@@ -31,12 +31,18 @@ func (m *CadManager) ResetDrawing() error {
 func (m *CadManager) setupLayers() error {
 	layers := GetStandardLayers()
 
+	// Get the default continuous line type
+	continuousLineType, err := m.drawing.LineType("Continuous")
+	if err != nil {
+		return fmt.Errorf("failed to get continuous line type: %w", err)
+	}
+
 	for _, layer := range layers {
-		// Add layer with color, no specific line type (nil), not set as current (false)
+		// Add layer with color and continuous line type
 		_, err := m.drawing.AddLayer(
 			layer.Name,
 			layer.Color,
-			nil,   // Line type - use default continuous
+			continuousLineType,
 			false, // Don't set as current layer
 		)
 		if err != nil {

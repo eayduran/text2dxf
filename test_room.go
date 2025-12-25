@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/eayduran/text2dxf/pkg/cadengine"
+	"github.com/yourusername/cadengine/pkg/cadengine"
 )
 
 func main() {
